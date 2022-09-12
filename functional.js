@@ -167,109 +167,70 @@ $(document).ready(function(){
   });
 // ===== 풋터 메뉴바 2차메뉴 작동 END =====
 
-  $(".coffeeHover, .menuHover, .storeHover, .responsibilityHover, .starbucksHover, .whatsNewsHover").css({
-    display: "none",
-  });
 
-  $(".lowerBar ul li .menuCoffee, .coffeeHover").hover(function(){
-    $(".lowerBar ul li .menuCoffee").css({
-      color: "#669900",
-      background: "#2C2A29",
-    });
-    $(".coffeeHover").slideDown();
-  }, function(){
-    $(".lowerBar ul li .menuCoffee").css({
-      color: "#333333",
-      background: "#f6f5ef",
-    });
-    $(".coffeeHover").slideUp();
-  });
+// ===== 메인 메뉴바 슬라이드 STRAT =====
+  $(".lowerBar ul > li > div:first-child").hover(function(){
 
-  $(".lowerBar ul li .menuMenu, .menuHover").hover(function(){
-    $(".lowerBar ul li .menuMenu").css({
-      color: "#669900",
-      background: "#2C2A29",
-    });
-    $(".menuHover").slideDown();
-  }, function(){
-    $(".lowerBar ul li .menuMenu").css({
-      color: "#333333",
-      background: "#f6f5ef",
-    });
-    $(".menuHover").slideUp();
-  });
-
-  $(".lowerBar ul li .menuStore, .storeHover").hover(function(){
-    $(".lowerBar ul li .menuStore").css({
-      color: "#669900",
-      background: "#2C2A29",
-    });
-    $(".storeHover").slideDown();
-  }, function(){
-    $(".lowerBar ul li .menuStore").css({
-      color: "#333333",
-      background: "#f6f5ef",
-    });
-    $(".storeHover").slideUp();
-  });
-
-  $(".lowerBar ul li .menuResponsibility, .responsibilityHover").hover(function(){
-    $(".lowerBar ul li .menuResponsibility").css({
-      color: "#669900",
-      background: "#2C2A29",
-    });
-    $(".responsibilityHover").slideDown();
-  }, function(){
-    $(".lowerBar ul li .menuResponsibility").css({
-      color: "#333333",
-      background: "#f6f5ef",
-    });
-    $(".responsibilityHover").slideUp();
-  });
-
-  $(".lowerBar ul li .menuStarbucks, .starbucksHover").hover(function(){
-    $(".lowerBar ul li .menuStarbucks").css({
-      color: "#669900",
-      background: "#2C2A29",
-    });
-    $(".starbucksHover").slideDown();
-  }, function(){
-    $(".lowerBar ul li .menuStarbucks").css({
-      color: "#333333",
-      background: "#f6f5ef",
-    });
-    $(".starbucksHover").slideUp();
-  });
-
-  $(".lowerBar ul li .menuWhats, .whatsNewsHover").hover(function(){
-    $(".lowerBar ul li .menuWhats").css({
-      color: "#669900",
-      background: "#2C2A29",
-    });
-    $(".whatsNewsHover").slideDown();
-  }, function(){
-    $(".lowerBar ul li .menuWhats").css({
-      color: "#333333",
-      background: "#f6f5ef",
-    });
-    $(".whatsNewsHover").slideUp();
-  });
-
-
-  $(".menuBarWrap > .lowerBar > ul > li > div:first-child").hover(function(){
     $(this).css({
+      color: "#669900",
+      background: "#2C2A29",
       textDecoration: "underline",
     });
+
+    $(".submenuBackground, .submenuBackgroundLower").stop().css({
+      opacity: "0.5",
+    }).slideDown();
+    $(this).next().stop().slideDown();
+    var upperHeight = $(this).next().children().first().outerHeight(true);
+    var lowerHeight = $(this).next().children().eq(1).outerHeight(true);
+    // var wholeHeight = upperHeight+lowerHeight;
+    $(".submenuBackground").height(upperHeight);
+    $(".submenuBackgroundLower").height(lowerHeight);
+    // $(".menuBarBackground").height(wholeHeight);
+
+    console.log(upperHeight);
+    console.log(lowerHeight);
+    // console.log(wholeHeight);
+    $(".submenuBackground, .submenuBackgroundLower").stop().css({
+      opacity: "0",
+    }).slideUp();
+    $(this).next().stop().slideUp();
+
+    $(".submenuBackground, .submenuBackgroundLower").stop().css({
+      opacity: "1",
+    }).slideDown(400);
+    $(this).next().stop().slideDown(400);
+
+
   }, function(){
+
+
     $(this).css({
+      color: "#333333",
+      background: "#f6f5ef",
       textDecoration: "",
     });
+
+    $(this).next().stop().slideUp(100);
+    $(".submenuBackground, .submenuBackgroundLower, .menuBarBackground").stop().slideUp(200);
+
+    var upperHeight = $(this).next().children().first().outerHeight(true);
+    var lowerHeight = $(this).next().children().eq(1).outerHeight(true);
+    // var wholeHeight = upperHeight+lowerHeight;
+
+    $(".submenuBackground").height("0");
+    $(".submenuBackgroundLower").height("0");
+    $(".menuBarBackground").height("0");
+    console.log(upperHeight);
+    console.log(lowerHeight);
+    // console.log(wholeHeight);
   });
+
 
   // ===== 화면 로딩 후 프로모션바 1회 닫기 START =====
   setTimeout(function(){
     $(".noticeBgColorPatternWrap > .patternRight > div > .noticeBarRightArrrow_active").click();
-  }, 50);
+  }, 0);
   // ===== 화면 로딩 후 프로모션바 1회 닫기 END =====
 
   // ===== 스벅 프로모션바 슬라이드 START =====

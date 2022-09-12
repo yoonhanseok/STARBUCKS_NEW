@@ -1340,6 +1340,7 @@ header {
   padding-top: 10px;
   margin: 0 auto;
   position: relative;
+  z-index: 1;
 }
 
 .upperBar {
@@ -1456,6 +1457,8 @@ header {
 
 .subWrap {
   position: absolute;
+  display: none;
+  left: -370px;
 }
 
 .submenuUpper {
@@ -1464,10 +1467,8 @@ header {
   flex-wrap: wrap;
   width: 1100px;
   margin: 0 auto;
-  background-color: #2C2A29;
-  /* padding: 30px 0; */
+  /* background-color: #2C2A29; */
   text-align: left;
-  /* position: absolute; */
 }
 
 .submenuUpper > span {
@@ -1475,7 +1476,6 @@ header {
   padding-right: 70px;
   padding-top: 20px;
   padding-bottom: 20px;
-  /* background-color: #2C2A29; */
 }
 
 .submenuUpper > span > div {
@@ -1494,6 +1494,10 @@ header {
   margin: 0;
 }
 
+.submenuLower {
+  /* height: 100%; */
+}
+
 .submenuLower > ul {
   padding: 18px 0;
   margin: 0;
@@ -1509,100 +1513,27 @@ header {
   color: #64a70b;
 }
 
-.coffeeHover > .submenuBackground {
-  position: absolute;
+#menuBar > .menuBarBackground {
+  position: relative;
   width: 100%;
-  height: 380px;
-  background-color: #2C2A29;
-  z-index: -1;
-}
-.coffeeHover > .submenuBackgroundLower {
-  position: absolute;
-  width: 100%;
-  height: 110px;
-  top: 510px;
-  background: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
-  z-index: -1;
+  z-index: 0;
+  display: none;
 }
 
-.menuHover > .submenuBackground {
-  position: absolute;
+.submenuBackground {
+  display: none;
+  position: relative;
   width: 100%;
-  height: 270px;
   background-color: #2C2A29;
-  z-index: -1;
+  right: 0;
+  z-index: 0;
 }
-.menuHover > .submenuBackgroundLower {
-  position: absolute;
+.submenuBackgroundLower {
+  display: none;
+  position: relative;
   width: 100%;
-  height: 75px;
-  top: 400px;
   background: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
-  z-index: -1;
-}
-
-.storeHover > .submenuBackground {
-  position: absolute;
-  width: 100%;
-  height: 110px;
-  background-color: #2C2A29;
-  z-index: -1;
-}
-.storeHover > .submenuBackgroundLower {
-  position: absolute;
-  width: 100%;
-  height: 73px;
-  top: 240px;
-  background: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
-  z-index: -1;
-}
-
-.responsibilityHover > .submenuBackground {
-  position: absolute;
-  width: 100%;
-  height: 190px;
-  background-color: #2C2A29;
-  z-index: -1;
-}
-.responsibilityHover > .submenuBackgroundLower {
-  position: absolute;
-  width: 100%;
-  height: 30px;
-  top: 320px;
-  background: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
-  z-index: -1;
-}
-
-.starbucksHover > .submenuBackground {
-  position: absolute;
-  width: 100%;
-  height: 190px;
-  background-color: #2C2A29;
-  z-index: -1;
-}
-.starbucksHover > .submenuBackgroundLower {
-  position: absolute;
-  width: 100%;
-  height: 75px;
-  top: 320px;
-  background: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
-  z-index: -1;
-}
-
-.whatsNewsHover > .submenuBackground {
-  position: absolute;
-  width: 100%;
-  height: 170px;
-  background-color: #2C2A29;
-  z-index: -1;
-}
-.whatsNewsHover > .submenuBackgroundLower {
-  position: absolute;
-  width: 100%;
-  height: 110px;
-  top: 300px;
-  background: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
-  z-index: -1;
+  z-index: 0;
 }
 
 #apologyTab {
