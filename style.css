@@ -1455,7 +1455,7 @@ header {
   background-color: #2C2A29;
 }
 
-.subWrap {
+.lowerBar ul > li > div:nth-child(2) {
   position: absolute;
   display: none;
   left: -370px;
@@ -1519,7 +1519,7 @@ header {
   display: none;
 }
 
-.submenuBackground {
+#submenuBackground {
   display: none;
   position: relative;
   width: 100%;
@@ -1527,7 +1527,7 @@ header {
   right: 0;
   z-index: 0;
 }
-.submenuBackgroundLower {
+#submenuBackgroundLower {
   display: none;
   position: relative;
   width: 100%;

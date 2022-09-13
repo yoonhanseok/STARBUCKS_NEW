@@ -170,38 +170,39 @@ $(document).ready(function(){
 
 // ===== 메인 메뉴바 슬라이드 STRAT =====
 
-  $(".lowerBar ul > li > div:first-child > .subWrap").hover(function(){
+  $(".lowerBar ul > li > div:nth-child(2)").hover(function(){
+    $(this).addClass("popActive");
+    $(this).prev().addClass("popActive");
+    $(this).prev().css({
+      color: "#669900",
+      background: "#2C2A29",
+      textDecoration: "underline",
+    });
+  }, function(){
+    $(this).removeClass("popActive");
+    $(this).prev().removeClass("popActive");
+  });
+
+  $("#submenuBackground, #submenuBackgroundLower").hover(function(){
     $(this).addClass("popActive");
   }, function(){
     $(this).removeClass("popActive");
   });
 
-  $(".submenuBackground, .submenuBackgroundLower").hover(function(){
-    $(this).addClass("popActive");
-  }, function(){
-    $(this).removeClass("popActive");
-  });
-
-  $(".lowerBar ul > li > div:first-child").hover(function(){
+  $(".lowerBar ul > li > div:first-child").mouseover(function(){
 
     $(this).addClass("popActive");
 
     var thisClassName = $(this).attr("class");
     var subClassName = $(this).next().attr("class");
-    var backClassName = $(this).attr("class");
-
-    console.log(thisClassName);
-
+    var backAClassName = $("#submenuBackground").attr("class");
+    var backBClassName = $("#submenuBackgroundLower").attr("class");
 
     $(this).css({
       color: "#669900",
       background: "#2C2A29",
       textDecoration: "underline",
     });
-
-
-    $(this).next().addClass("popActive");
-    $(".submenuBackground, .submenuBackgroundLower").addClass("popActive");
 
     $(this).next().stop().slideDown(1);
     // ==> [display: none]되어있을 경우 크기 값이 null 혹은 0으로 나오기 때문에 임의로 열어서 활성화
@@ -212,30 +213,41 @@ $(document).ready(function(){
     $(this).next().stop().slideUp(1);
     // ==> 변수에 높이 값을 담은 후 빠르게 바로 닫기
 
-    $(".submenuBackground").css({
+    $("#submenuBackground").css({
       height: upperHeight,
     });
-    $(".submenuBackgroundLower").css({
+    $("#submenuBackgroundLower").css({
       height: lowerHeight,
     });
     // ==> 각 백그라운드에 높이 값 설정
+    console.log(thisClassName);
+    console.log(subClassName);
+    console.log(backAClassName);
+    console.log(backBClassName);
 
-    console.log(upperHeight);
-    console.log(lowerHeight);
-    console.log(thisClassName == "popActive");
-
-    $(".submenuBackground, .submenuBackgroundLower").stop().slideDown(200);
+    $("#submenuBackground, #submenuBackgroundLower").stop().slideDown(200);
     $(this).next().stop().slideDown(200);
-  }, function(){
+  });
 
-    $(this).removeClass("popActive");
-
+  $(".lowerBar ul > li > div:first-child").mouseout(function(){
     var thisClassName = $(this).attr("class");
     var subClassName = $(this).next().attr("class");
-    var backClassName = $(this).attr("class");
+    var backAClassName = $("#submenuBackground").attr("class");
+    var backBClassName = $("#submenuBackgroundLower").attr("class");
+    $(this).removeClass("popActive");
+    $(this).css({
+      color: "#333333",
+      background: "#f6f5ef",
+      textDecoration: "",
+    });
 
     console.log(thisClassName);
-    console.log(thisClassName === "popActive");
+    console.log(subClassName);
+    console.log(backAClassName);
+    console.log(backBClassName);
+
+    if(thisClassName === "popActive" || subClassName === "popActive" || backAClassName === "popActive" || backBClassName === "popActive"){
+    } else {
 
     $(this).css({
       color: "#333333",
@@ -243,14 +255,81 @@ $(document).ready(function(){
       textDecoration: "",
     });
 
-
-
-    $(".submenuBackground, .submenuBackgroundLower").height(0);
+    $("#submenuBackground, #submenuBackgroundLower").height(0);
     // ==> 값 초기화 (초기화 안하니까 처음 팝업된 크기로 고정되는 현상 발견)
 
-    $(".submenuBackground, .submenuBackgroundLower, .menuBarBackground").stop().slideUp(200);
+    $("#submenuBackground, #submenuBackgroundLower").stop().slideUp(200);
     $(this).next().stop().slideUp(200);
+
+    };
+
   });
+
+  $(".lowerBar ul > li > div:nth-child(2)").mouseout(function(){
+    var thisClassName = $(this).attr("class");
+    var subClassName = $(this).next().attr("class");
+    var backAClassName = $("#submenuBackground").attr("class");
+    var backBClassName = $("#submenuBackgroundLower").attr("class");
+
+    if(thisClassName === "popActive" || subClassName === "popActive" || backAClassName === "popActive" || backBClassName === "popActive"){
+    } else {
+
+    $(this).prev().css({
+      color: "#333333",
+      background: "#f6f5ef",
+      textDecoration: "",
+    });
+
+    $("#submenuBackground, #submenuBackgroundLower").height(0);
+    $("#submenuBackground, #submenuBackgroundLower").stop().slideUp(200);
+    $(this).stop().slideUp(200);
+    };
+
+  });
+
+  $("#submenuBackground, #submenuBackgroundLower").mouseout(function(){
+
+    var backAClassName = $("#submenuBackground").attr("class");
+    var backBClassName = $("#submenuBackgroundLower").attr("class");
+
+    if(backAClassName === "popActive" || backBClassName === "popActive"){
+    } else {
+
+    $(".lowerBar ul > li > div:first-child").css({
+      color: "#333333",
+      background: "#f6f5ef",
+      textDecoration: "",
+    });
+
+    $("#submenuBackground, #submenuBackgroundLower").height(0);
+    $("#submenuBackground, #submenuBackgroundLower").stop().slideUp(200);
+    $(this).next().stop().slideUp(200);
+    };
+
+  });
+
+  $("#submenuBackgroundLower").mouseout(function(){
+    var thisClassName = $(this).attr("class");
+    var subClassName = $(this).next().attr("class");
+    var backAClassName = $("#submenuBackground").attr("class");
+    var backBClassName = $("#submenuBackgroundLower").attr("class");
+
+    if(thisClassName === "popActive" || subClassName === "popActive" || backAClassName === "popActive" || backBClassName === "popActive"){
+    } else {
+
+    $(".lowerBar ul > li > div:first-child").css({
+      color: "#333333",
+      background: "#f6f5ef",
+      textDecoration: "",
+    });
+
+    $("#submenuBackground, #submenuBackgroundLower").height(0);
+    $("#submenuBackground, #submenuBackgroundLower").stop().slideUp(200);
+    $(this).next().stop().slideUp(200);
+    };
+
+  });
+
   // ===== 메인 메뉴바 슬라이드 STRAT =====
 
 
