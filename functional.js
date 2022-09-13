@@ -169,7 +169,29 @@ $(document).ready(function(){
 
 
 // ===== 메인 메뉴바 슬라이드 STRAT =====
+
+  $(".lowerBar ul > li > div:first-child > .subWrap").hover(function(){
+    $(this).addClass("popActive");
+  }, function(){
+    $(this).removeClass("popActive");
+  });
+
+  $(".submenuBackground, .submenuBackgroundLower").hover(function(){
+    $(this).addClass("popActive");
+  }, function(){
+    $(this).removeClass("popActive");
+  });
+
   $(".lowerBar ul > li > div:first-child").hover(function(){
+
+    $(this).addClass("popActive");
+
+    var thisClassName = $(this).attr("class");
+    var subClassName = $(this).next().attr("class");
+    var backClassName = $(this).attr("class");
+
+    console.log(thisClassName);
+
 
     $(this).css({
       color: "#669900",
@@ -177,33 +199,43 @@ $(document).ready(function(){
       textDecoration: "underline",
     });
 
-    $(".submenuBackground, .submenuBackgroundLower").stop().css({
-      opacity: "0.5",
-    }).slideDown();
-    $(this).next().stop().slideDown();
-    var upperHeight = $(this).next().children().first().outerHeight(true);
-    var lowerHeight = $(this).next().children().eq(1).outerHeight(true);
-    // var wholeHeight = upperHeight+lowerHeight;
-    $(".submenuBackground").height(upperHeight);
-    $(".submenuBackgroundLower").height(lowerHeight);
-    // $(".menuBarBackground").height(wholeHeight);
+
+    $(this).next().addClass("popActive");
+    $(".submenuBackground, .submenuBackgroundLower").addClass("popActive");
+
+    $(this).next().stop().slideDown(1);
+    // ==> [display: none]되어있을 경우 크기 값이 null 혹은 0으로 나오기 때문에 임의로 열어서 활성화
+
+    var upperHeight = $(this).next().children().first().height();
+    var lowerHeight = $(this).next().children().eq(1).height();
+
+    $(this).next().stop().slideUp(1);
+    // ==> 변수에 높이 값을 담은 후 빠르게 바로 닫기
+
+    $(".submenuBackground").css({
+      height: upperHeight,
+    });
+    $(".submenuBackgroundLower").css({
+      height: lowerHeight,
+    });
+    // ==> 각 백그라운드에 높이 값 설정
 
     console.log(upperHeight);
     console.log(lowerHeight);
-    // console.log(wholeHeight);
-    $(".submenuBackground, .submenuBackgroundLower").stop().css({
-      opacity: "0",
-    }).slideUp();
-    $(this).next().stop().slideUp();
+    console.log(thisClassName == "popActive");
 
-    $(".submenuBackground, .submenuBackgroundLower").stop().css({
-      opacity: "1",
-    }).slideDown(400);
-    $(this).next().stop().slideDown(400);
-
-
+    $(".submenuBackground, .submenuBackgroundLower").stop().slideDown(200);
+    $(this).next().stop().slideDown(200);
   }, function(){
 
+    $(this).removeClass("popActive");
+
+    var thisClassName = $(this).attr("class");
+    var subClassName = $(this).next().attr("class");
+    var backClassName = $(this).attr("class");
+
+    console.log(thisClassName);
+    console.log(thisClassName === "popActive");
 
     $(this).css({
       color: "#333333",
@@ -211,20 +243,15 @@ $(document).ready(function(){
       textDecoration: "",
     });
 
-    $(this).next().stop().slideUp(100);
+
+
+    $(".submenuBackground, .submenuBackgroundLower").height(0);
+    // ==> 값 초기화 (초기화 안하니까 처음 팝업된 크기로 고정되는 현상 발견)
+
     $(".submenuBackground, .submenuBackgroundLower, .menuBarBackground").stop().slideUp(200);
-
-    var upperHeight = $(this).next().children().first().outerHeight(true);
-    var lowerHeight = $(this).next().children().eq(1).outerHeight(true);
-    // var wholeHeight = upperHeight+lowerHeight;
-
-    $(".submenuBackground").height("0");
-    $(".submenuBackgroundLower").height("0");
-    $(".menuBarBackground").height("0");
-    console.log(upperHeight);
-    console.log(lowerHeight);
-    // console.log(wholeHeight);
+    $(this).next().stop().slideUp(200);
   });
+  // ===== 메인 메뉴바 슬라이드 STRAT =====
 
 
   // ===== 화면 로딩 후 프로모션바 1회 닫기 START =====
@@ -232,6 +259,7 @@ $(document).ready(function(){
     $(".noticeBgColorPatternWrap > .patternRight > div > .noticeBarRightArrrow_active").click();
   }, 0);
   // ===== 화면 로딩 후 프로모션바 1회 닫기 END =====
+
 
   // ===== 스벅 프로모션바 슬라이드 START =====
   $(".noticeBgColorPatternWrap > span:nth-child(2) > div > div:nth-child(2)").click(function(){
@@ -253,6 +281,7 @@ $(document).ready(function(){
   });
   // ===== 스벅 프로모션바 슬라이드 END =====
 
+
 // ===== 스벅 프로모션 Bar BX슬라이드 START =====
   $('.starbucksPromotion_bxslider').bxSlider({
     auto: true,
@@ -262,6 +291,7 @@ $(document).ready(function(){
     pager: true,
   });
 // ===== 스벅 프로모션 Bar bxSlider END =====
+
 
 // ===== 풋터 수상기록 BX슬라이드 START =====
   $('.award_bxslider').bxSlider({
