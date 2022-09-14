@@ -1512,13 +1512,6 @@ header {
   color: #64a70b;
 }
 
-#menuBar > .menuBarBackground {
-  position: relative;
-  width: 100%;
-  z-index: 0;
-  display: none;
-}
-
 #submenuBackground {
   display: none;
   position: relative;
