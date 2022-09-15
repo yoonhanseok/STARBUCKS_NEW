@@ -187,10 +187,6 @@ $(document).ready(function(){
     $(this).children().eq(1).stop().slideUp(300);
     $(this).children().eq(2).stop().slideUp(300);
   });
-  // 
-  // $(".lowerBar ul > li").mouseout(function(){
-  //   $(this).children().stop().slideUp(300);
-  // });
 
   // ===== 메인 메뉴바 슬라이드 STRAT =====
 
