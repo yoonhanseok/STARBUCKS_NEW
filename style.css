@@ -1512,20 +1512,118 @@ header {
   color: #64a70b;
 }
 
-#submenuBackground {
-  display: none;
-  position: relative;
-  width: 100%;
+.lowerBarWrap > li:first-child #submenuBackground {
+  position: fixed;
+  width: 100vw;
+  height: 380px;
   background-color: #2C2A29;
-  right: 0;
-  z-index: 0;
+  top: 132px;
+  left: 0;
+  z-index: -1;
 }
-#submenuBackgroundLower {
-  display: none;
-  position: relative;
-  width: 100%;
+.lowerBarWrap > li:first-child #submenuBackgroundLower {
+  position: fixed;
+  width: 100vw;
+  height: 110px;
   background: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
-  z-index: 0;
+  top: 512px;
+  left: 0;
+  z-index: -1;
+}
+
+.lowerBarWrap > li:nth-child(2) #submenuBackground {
+  position: fixed;
+  width: 100vw;
+  height: 270px;
+  background-color: #2C2A29;
+  top: 132px;
+  left: 0;
+  z-index: -1;
+}
+.lowerBarWrap > li:nth-child(2) #submenuBackgroundLower {
+  position: fixed;
+  width: 100vw;
+  height: 73px;
+  background: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
+  top: 402px;
+  left: 0;
+  z-index: -1;
+}
+
+.lowerBarWrap > li:nth-child(3) #submenuBackground {
+  position: fixed;
+  width: 100vw;
+  height: 110px;
+  background-color: #2C2A29;
+  top: 132px;
+  left: 0;
+  z-index: -1;
+}
+.lowerBarWrap > li:nth-child(3) #submenuBackgroundLower {
+  position: fixed;
+  width: 100vw;
+  height: 73px;
+  background: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
+  top: 242px;
+  left: 0;
+  z-index: -1;
+}
+
+.lowerBarWrap > li:nth-child(4) #submenuBackground {
+  position: fixed;
+  width: 100vw;
+  height: 190px;
+  background-color: #2C2A29;
+  top: 132px;
+  left: 0;
+  z-index: -1;
+}
+.lowerBarWrap > li:nth-child(4) #submenuBackgroundLower {
+  position: fixed;
+  width: 100vw;
+  height: 36px;
+  background: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
+  top: 322px;
+  left: 0;
+  z-index: -1;
+}
+
+.lowerBarWrap > li:nth-child(5) #submenuBackground {
+  position: fixed;
+  width: 100vw;
+  height: 190px;
+  background-color: #2C2A29;
+  top: 132px;
+  left: 0;
+  z-index: -1;
+}
+.lowerBarWrap > li:nth-child(5) #submenuBackgroundLower {
+  position: fixed;
+  width: 100vw;
+  height: 73px;
+  background: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
+  top: 322px;
+  left: 0;
+  z-index: -1;
+}
+
+.lowerBarWrap > li:nth-child(6) #submenuBackground {
+  position: fixed;
+  width: 100vw;
+  height: 170px;
+  background-color: #2C2A29;
+  top: 132px;
+  left: 0;
+  z-index: -1;
+}
+.lowerBarWrap > li:nth-child(6) #submenuBackgroundLower {
+  position: fixed;
+  width: 100vw;
+  height: 110px;
+  background: url("https://www.starbucks.co.kr/common/img/common/gnb_sub_txbg.jpg");
+  top: 302px;
+  left: 0;
+  z-index: -1;
 }
 
 #apologyTab {
