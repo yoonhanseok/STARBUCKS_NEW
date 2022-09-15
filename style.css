@@ -1482,10 +1482,6 @@ header {
   margin: 0;
 }
 
-.submenuLower {
-  /* height: 100%; */
-}
-
 .submenuLower > ul {
   padding: 18px 0;
   margin: 0;
@@ -1511,14 +1507,14 @@ header {
   z-index: -1;
 }
 
-.lowerBarWrap > li:first-child #submenuBackground {
+.lowerBarWrap > li:first-child .submenuBackground {
   position: relative;
   width: 100vw;
   height: 380px;
   background-color: #2C2A29;
 }
 
-.lowerBarWrap > li:first-child #submenuBackgroundLower {
+.lowerBarWrap > li:first-child .submenuBackgroundLower {
   position: relative;
   width: 100vw;
   height: 110px;
@@ -1535,14 +1531,14 @@ header {
   z-index: -1;
 }
 
-.lowerBarWrap > li:nth-child(2) #submenuBackground {
+.lowerBarWrap > li:nth-child(2) .submenuBackground {
   position: relative;
   width: 100vw;
   height: 270px;
   background-color: #2C2A29;
 }
 
-.lowerBarWrap > li:nth-child(2) #submenuBackgroundLower {
+.lowerBarWrap > li:nth-child(2) .submenuBackgroundLower {
   position: relative;
   width: 100vw;
   height: 73px;
@@ -1559,13 +1555,13 @@ header {
   z-index: -1;
 }
 
-.lowerBarWrap > li:nth-child(3) #submenuBackground {
+.lowerBarWrap > li:nth-child(3) .submenuBackground {
   position: relative;
   width: 100vw;
   height: 110px;
   background-color: #2C2A29;
 }
-.lowerBarWrap > li:nth-child(3) #submenuBackgroundLower {
+.lowerBarWrap > li:nth-child(3) .submenuBackgroundLower {
   position: relative;
   width: 100vw;
   height: 73px;
@@ -1582,13 +1578,13 @@ header {
   z-index: -1;
 }
 
-.lowerBarWrap > li:nth-child(4) #submenuBackground {
+.lowerBarWrap > li:nth-child(4) .submenuBackground {
   position: relative;
   width: 100vw;
   height: 190px;
   background-color: #2C2A29;
 }
-.lowerBarWrap > li:nth-child(4) #submenuBackgroundLower {
+.lowerBarWrap > li:nth-child(4) .submenuBackgroundLower {
   position: relative;
   width: 100vw;
   height: 36px;
@@ -1605,13 +1601,13 @@ header {
   z-index: -1;
 }
 
-.lowerBarWrap > li:nth-child(5) #submenuBackground {
+.lowerBarWrap > li:nth-child(5) .submenuBackground {
   position: relative;
   width: 100vw;
   height: 190px;
   background-color: #2C2A29;
 }
-.lowerBarWrap > li:nth-child(5) #submenuBackgroundLower {
+.lowerBarWrap > li:nth-child(5) .submenuBackgroundLower {
   position: relative;
   width: 100vw;
   height: 73px;
@@ -1628,13 +1624,13 @@ header {
   z-index: -1;
 }
 
-.lowerBarWrap > li:nth-child(6) #submenuBackground {
+.lowerBarWrap > li:nth-child(6) .submenuBackground {
   position: relative;
   width: 100vw;
   height: 170px;
   background-color: #2C2A29;
 }
-.lowerBarWrap > li:nth-child(6) #submenuBackgroundLower {
+.lowerBarWrap > li:nth-child(6) .submenuBackgroundLower {
   position: relative;
   width: 100vw;
   height: 110px;

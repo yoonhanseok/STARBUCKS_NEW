@@ -176,6 +176,11 @@ $(document).ready(function(){
       background: "#2C2A29",
       textDecoration: "underline",
     });
+    $(this).children().eq(1).css({
+      zIndex: 10000,
+    });$(this).children().eq(2).css({
+      zIndex: 5000,
+    });
     $(this).children().eq(1).stop().slideDown(300);
     $(this).children().eq(2).stop().slideDown(300);
   }, function(){
@@ -183,6 +188,11 @@ $(document).ready(function(){
       color: "#333333",
       background: "#f6f5ef",
       textDecoration: "",
+    });
+    $(this).children().eq(1).css({
+      zIndex: 0,
+    });$(this).children().eq(2).css({
+      zIndex: -1,
     });
     $(this).children().eq(1).stop().slideUp(300);
     $(this).children().eq(2).stop().slideUp(300);
