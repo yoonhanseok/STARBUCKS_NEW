@@ -170,102 +170,6 @@ $(document).ready(function(){
 
 // ===== 메인 메뉴바 슬라이드 STRAT =====
 
-  // $("#submenuBackground, #submenuBackgroundLower").hover(function(){
-  //   $(this).addClass("popActive");
-  // }, function(){
-  //   $(this).removeClass("popActive");
-  // });
-  //
-  // $(".lowerBar ul > li > div:nth-child(2)").hover(function(){
-  //
-  //   $(this).addClass("popActive");
-  //   $(this).prev().addClass("popActive");
-  //   $(this).parent().parent().parent().parent().next().addClass("popActive");
-  //   $(this).parent().parent().parent().parent().nextAll("#submenuBackgroundLower").addClass("popActive");
-  //   $(this).prev().css({
-  //     color: "#669900",
-  //     background: "#2C2A29",
-  //     textDecoration: "underline",
-  //   });
-  //
-  // }, function(){
-  //
-  //   $(this).removeClass("popActive");
-  //   $(this).prev().removeClass("popActive");
-  //   // $(this).parent().parent().parent().parent().next().removeClass("popActive");
-  //   // $(this).parent().parent().parent().parent().nextAll("#submenuBackgroundLower").removeClass("popActive");
-  //
-  //     $(this).prev().css({
-  //       color: "#333333",
-  //       background: "#f6f5ef",
-  //       textDecoration: "",
-  //     });
-  //     $("#submenuBackground, #submenuBackgroundLower").height(0);
-  //     // ==> 값 초기화 (초기화 안하니까 처음 팝업된 크기로 고정되는 현상 발견)
-  //     $("#submenuBackground, #submenuBackgroundLower").stop().slideUp(200);
-  //     $(this).stop().slideUp(200);
-  //   // };
-  // });
-
-  // $(".lowerBar ul > li > div:first-child").hover(function(){
-  //
-  //   $(this).addClass("popActive");
-  //
-  //   var thisClassName = $(this).attr("class");
-  //   var subClassName = $(this).next().attr("class");
-  //   var backAClassName = $("#submenuBackground").attr("class");
-  //   var backBClassName = $("#submenuBackgroundLower").attr("class");
-  //
-  //   $(this).css({
-  //     color: "#669900",
-  //     background: "#2C2A29",
-  //     textDecoration: "underline",
-  //   });
-  //
-  //   $(".lowerBar ul > li > div:first-child").next().stop().slideUp(1);
-  //   // ==> 열려있는 모든 하위 메뉴바를 강제로 닫기
-  //   $(this).next().stop().slideDown(1);
-  //   // ==> [display: none]되어있을 경우 크기 값이 null 혹은 0으로 나오기 때문에 임의로 열어서 활성화
-  //
-  //   var upperHeight = $(this).next().children().first().height();
-  //   var lowerHeight = $(this).next().children().eq(1).height();
-  //
-  //   $(this).next().stop().slideUp(1);
-  //   // ==> 변수에 높이 값을 담은 후 빠르게 바로 닫기
-  //
-  //   $("#submenuBackground").css({
-  //     height: upperHeight,
-  //   });
-  //   $("#submenuBackgroundLower").css({
-  //     height: lowerHeight,
-  //   });
-  //   // ==> 각 백그라운드에 높이 값 설정
-  //
-  //   console.log(upperHeight);
-  //   console.log(lowerHeight);
-  //
-  //   $("#submenuBackground, #submenuBackgroundLower").stop().slideDown(200);
-  //   $(this).next().stop().slideDown(200);
-  //
-  // }, function(){
-  //
-  //   $(this).removeClass("popActive");
-  //
-  //   $(this).css({
-  //     color: "#333333",
-  //     background: "#f6f5ef",
-  //     textDecoration: "",
-  //   });
-  //
-  //   // if(!(subClassName === "popActive")){
-  //   // $("#submenuBackground, #submenuBackgroundLower").height(0);
-  //   // ==> 값 초기화 (초기화 안하니까 처음 팝업된 크기로 고정되는 현상 발견)
-  //   // $("#submenuBackground, #submenuBackgroundLower").stop().slideUp(200);
-  //   // $(this).next().stop().slideUp(200);
-  //   // };
-  //
-  // });
-
   $(".lowerBar ul > li").hover(function(){
     $(this).children().first().css({
       color: "#669900",
@@ -273,19 +177,39 @@ $(document).ready(function(){
       textDecoration: "underline",
     });
 
-    $(this).children().eq(1).stop().slideDown(600);
+    // $(".lowerBar ul > li").children().eq(1).stop();
+    $(this).children().eq(1).stop().slideDown(300);
+    $(this).children().eq(2).stop().slideDown(300);
+    // $(this).children("#submenuBackground, #submenuBackgroundLower").stop().slideDown(300);
+    // $(this).children().eq(3).stop().slideDown(300);
+    // $(this).children().eq(1).children().first().stop().slideDown(300);
+    // $(this).children().eq(1).children().eq(1).stop().slideDown(300);
+    // $(this).children().eq(1).children().eq(2).stop().slideDown(300);
+    // $(this).children().eq(1).children().eq(3).stop().slideDown(300);
+    // $(this).stop();
     // $(this).children().eq(1).children().stop().slideDown(400);
   }, function(){
+
     $(this).children().first().css({
       color: "#333333",
       background: "#f6f5ef",
       textDecoration: "",
     });
 
-    $(this).children().eq(1).stop().slideUp(600);
+    // $(".lowerBar ul > li").children().eq(1).stop();
+    $(this).children().eq(1).stop().slideUp(300);
+    $(this).children().eq(2).stop().slideUp(300);
+    // $(this).children("#submenuBackground, #submenuBackgroundLower").stop().slideUp(300);
+    // $(this).children().eq(1).stop().slideUp(300);
+    // $(this).children().eq(2).stop().slideUp(300);
+    // $(this).children().eq(3).stop().slideUp(300);
+    // $(this).children().eq(1).children().first().stop().slideUp(300);
+    // $(this).children().eq(1).children().eq(1).stop().slideUp(300);
+    // $(this).children().eq(1).children().eq(2).stop().slideUp(300);
+    // $(this).children().eq(1).children().eq(3).stop().slideUp(300);
+    // $(this).stop();
     // $(this).children().eq(1).children().stop().slideDown(400);
   });
-
 
   // ===== 메인 메뉴바 슬라이드 STRAT =====
 
