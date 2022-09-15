@@ -176,40 +176,21 @@ $(document).ready(function(){
       background: "#2C2A29",
       textDecoration: "underline",
     });
-
-    // $(".lowerBar ul > li").children().eq(1).stop();
     $(this).children().eq(1).stop().slideDown(300);
     $(this).children().eq(2).stop().slideDown(300);
-    // $(this).children("#submenuBackground, #submenuBackgroundLower").stop().slideDown(300);
-    // $(this).children().eq(3).stop().slideDown(300);
-    // $(this).children().eq(1).children().first().stop().slideDown(300);
-    // $(this).children().eq(1).children().eq(1).stop().slideDown(300);
-    // $(this).children().eq(1).children().eq(2).stop().slideDown(300);
-    // $(this).children().eq(1).children().eq(3).stop().slideDown(300);
-    // $(this).stop();
-    // $(this).children().eq(1).children().stop().slideDown(400);
   }, function(){
-
     $(this).children().first().css({
       color: "#333333",
       background: "#f6f5ef",
       textDecoration: "",
     });
-
-    // $(".lowerBar ul > li").children().eq(1).stop();
     $(this).children().eq(1).stop().slideUp(300);
     $(this).children().eq(2).stop().slideUp(300);
-    // $(this).children("#submenuBackground, #submenuBackgroundLower").stop().slideUp(300);
-    // $(this).children().eq(1).stop().slideUp(300);
-    // $(this).children().eq(2).stop().slideUp(300);
-    // $(this).children().eq(3).stop().slideUp(300);
-    // $(this).children().eq(1).children().first().stop().slideUp(300);
-    // $(this).children().eq(1).children().eq(1).stop().slideUp(300);
-    // $(this).children().eq(1).children().eq(2).stop().slideUp(300);
-    // $(this).children().eq(1).children().eq(3).stop().slideUp(300);
-    // $(this).stop();
-    // $(this).children().eq(1).children().stop().slideDown(400);
   });
+  // 
+  // $(".lowerBar ul > li").mouseout(function(){
+  //   $(this).children().stop().slideUp(300);
+  // });
 
   // ===== 메인 메뉴바 슬라이드 STRAT =====
 

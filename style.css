@@ -1526,6 +1526,7 @@ header {
   display: none;
   position: fixed;
   width: 100vw;
+  height: 490px;
   top: 132px;
   left: 0;
   z-index: -1;
@@ -1549,6 +1550,7 @@ header {
   display: none;
   position: fixed;
   width: 100vw;
+  height: 343px;
   top: 132px;
   left: 0;
   z-index: -1;
@@ -1572,6 +1574,7 @@ header {
   display: none;
   position: fixed;
   width: 100vw;
+  height: 183px;
   top: 132px;
   left: 0;
   z-index: -1;
@@ -1594,6 +1597,7 @@ header {
   display: none;
   position: fixed;
   width: 100vw;
+  height: 226px;
   top: 132px;
   left: 0;
   z-index: -1;
@@ -1616,6 +1620,7 @@ header {
   display: none;
   position: fixed;
   width: 100vw;
+  height: 283px;
   top: 132px;
   left: 0;
   z-index: -1;
@@ -1638,6 +1643,7 @@ header {
   display: none;
   position: fixed;
   width: 100vw;
+  height: 280px;
   top: 132px;
   left: 0;
   z-index: -1;
